@@ -14,7 +14,7 @@ def building_from_json(file_name):
     l1 = []
     for Any in data['_elevators']:
         l1.append(Elevator(Any))
-    b = Building(l1[0].minFloor, l1[1].maxFloor, l1)
+    b = Building(l1[0].minFloor, l1[0].maxFloor, l1)
     return b
 
 
@@ -26,7 +26,3 @@ def calls_from_CSV(file_name):
         li.append(Call(call))
     return Calls(li)
 
-
-l = calls_from_CSV('Calls_a.csv')
-l.calls[0].allocate(0)
-print (l.calls[0])

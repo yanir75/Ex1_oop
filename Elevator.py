@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class Elevator:
 
     def __init__(self, elev):
@@ -10,6 +13,12 @@ class Elevator:
         self.minFloor = elev['_minFloor']
         self.speed = elev['_speed']
         self.id = elev['_id']
+        self.waitingPeople = 0
+        self.state = 0 # 0 waiting -1 down 1 up
+        self.up = np.array([])
+        self.down = np.array([])
+    def waitingTime(self,time,flag):
+    # current position state =1
 
     def __str__(self):
-        return f"elev ID: { self.id }  start time: {self.startTime }  stop time: {self.stopTime }  open time: { self.openTime} +  close time: { self.closeTime }  max floor: { self.maxFloor }  min floor: { self.minFloor }  speed: { self.speed }  pos: { self.pos} "
+        return f"elev ID: {self.id}  start time: {self.startTime}  stop time: {self.stopTime}  open time: {self.openTime} +  close time: {self.closeTime}  max floor: {self.maxFloor}  min floor: {self.minFloor}  speed: {self.speed}  pos: {self.pos} "
