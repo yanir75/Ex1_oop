@@ -17,24 +17,24 @@ class Elevator:
         self.state = 0 # 0 waiting -1 down 1 up
         self.up = np.array([])
         self.down = np.array([])
-    def waitingTime(self,time,flag):
-        totalTime = 0
-        if self.state == 1:
-            people=self.waitingPeople
-            amountOfFloors = self.up[0] - self.pos
-            allSpeed = self.stopTime + self.openTime
-            totalTime = curTime = (amountOfFloors/self.speed) + allSpeed
-            if curTime >= time:
-                return time*people
-            totalTime = totalTime*people
-            # people --
-            ind = 1
-            anotherAllSpeed = self.startTime+self.closeTime+allSpeed
-            while curTime < time and len(self.up)>ind:
-                    amountOfFloors = self.up[ind] - self.up[ind-1]
-                    ind+=1
-                    curTime = curTime+amountOfFloors*self.speed+anotherAllSpeed
-                    #people --
+    # def waitingTime(self,time,flag):
+    #     totalTime = 0
+    #     if self.state == 1:
+    #         people=self.waitingPeople
+    #         amountOfFloors = self.up[0] - self.pos
+    #         allSpeed = self.stopTime + self.openTime
+    #         totalTime = curTime = (amountOfFloors/self.speed) + allSpeed
+    #         if curTime >= time:
+    #             return time*people
+    #         totalTime = totalTime*people
+    #         # people --
+    #         ind = 1
+    #         anotherAllSpeed = self.startTime+self.closeTime+allSpeed
+    #         while curTime < time and len(self.up)>ind:
+    #                 amountOfFloors = self.up[ind] - self.up[ind-1]
+    #                 ind+=1
+    #                 curTime = curTime+amountOfFloors*self.speed+anotherAllSpeed
+    #                 #people --
 
 
 
