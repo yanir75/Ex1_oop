@@ -26,3 +26,7 @@ def calls_from_CSV(file_name):
         li.append(Call(call))
     return Calls(li)
 
+b = building_from_json("B5.json")
+f = calls_from_CSV("Calls_d.csv")
+f.alloc(b)
+f.write_to_csv()

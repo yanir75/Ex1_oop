@@ -1,3 +1,6 @@
+import random
+
+
 class Call:
     def __init__(self, call):
         self.kind = call[0]
@@ -7,8 +10,11 @@ class Call:
         self.status = call[4]
         self.allocatedTo = call[5]
 
-    def allocate(self,elev):
-        self.allocatedTo = elev
+    def allocate(self, building):
+        size = len(building.elevators)
+        num = random.randint(0, size)
+        self.allocatedTo = num
 
     def __str__(self):
         return f"{self.kind},{self.time},{self.src},{self.dest},{self.status},{self.allocatedTo}"
+

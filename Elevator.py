@@ -1,4 +1,4 @@
-import numpy as np
+from Calls import Calls
 
 
 class Elevator:
@@ -14,33 +14,22 @@ class Elevator:
         self.speed = elev['_speed']
         self.id = elev['_id']
         self.waitingPeople = 0
-        self.state = 0 # 0 waiting -1 down 1 up
-        self.up = np.array([])
-        self.down = np.array([])
-    # def waitingTime(self,time,flag):
-    #     totalTime = 0
-    #     if self.state == 1:
-    #         people=self.waitingPeople
-    #         amountOfFloors = self.up[0] - self.pos
-    #         allSpeed = self.stopTime + self.openTime
-    #         totalTime = curTime = (amountOfFloors/self.speed) + allSpeed
-    #         if curTime >= time:
-    #             return time*people
-    #         totalTime = totalTime*people
-    #         # people --
-    #         ind = 1
-    #         anotherAllSpeed = self.startTime+self.closeTime+allSpeed
-    #         while curTime < time and len(self.up)>ind:
-    #                 amountOfFloors = self.up[ind] - self.up[ind-1]
-    #                 ind+=1
-    #                 curTime = curTime+amountOfFloors*self.speed+anotherAllSpeed
-    #                 #people --
+        self.state = 0  # 0 waiting -1 down 1 up
+        self.up = []
+        self.down = []
+        # self.calls_of_elev = Calls()
 
-
-
-
-
-    # current position state =1
+    # def add_to_route(self, elev):
+    #     elev_calls = self.calls_of_elev.calls
+    #     if len(self.calls_of_elev.calls) == 1:
+    #         if self.pos > elev_calls[0].src:
+    #             self.down.append(elev_calls[0].src)
+    #         elif self.pos < elev_calls[0].src:
+    #             self.up.append(elev_calls[0].src)
+    #         if elev_calls[0].dest > elev_calls[0].src or self.pos < elev_calls[0].dest:
+    #             self.up.append(elev_calls[0].dest)
+    #         else:
+    #             self.down.append(elev_calls[0].dest)
 
     def __str__(self):
         return f"elev ID: {self.id}  start time: {self.startTime}  stop time: {self.stopTime}  open time: {self.openTime} +  close time: {self.closeTime}  max floor: {self.maxFloor}  min floor: {self.minFloor}  speed: {self.speed}  pos: {self.pos} "
