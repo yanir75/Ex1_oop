@@ -1,6 +1,5 @@
 import csv
 import json
-
 from Building import Building
 from Call import Call
 from Calls import Calls
@@ -26,6 +25,18 @@ def calls_from_CSV(file_name):
         li.append(Call(call))
     return Calls(li)
 
+
+def read_calculate_write(building_file, calls_file):
+    try:
+        with open(building_file) as parser:
+            building = json.load(parser)
+    except:
+        print("The file is not a Json file!!")
+    curr_building = Building(building)
+    ind = 0
+    for elev in building['_elevators']:
+
+    print()
 
 b = building_from_json("B5.json")
 f = calls_from_CSV("Calls_d.csv")
