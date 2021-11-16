@@ -13,7 +13,10 @@ class Call:
     def allocate(self, building):
         size = len(building.elevators)
         num = random.randint(0, size)
-        self.allocatedTo = num
+        self.allocatedTo = 0
+
+    def get_call(self):
+        return self
 
     def __str__(self):
         return f"{self.kind},{self.time},{self.src},{self.dest},{self.status},{self.allocatedTo}"

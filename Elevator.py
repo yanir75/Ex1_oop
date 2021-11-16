@@ -1,3 +1,7 @@
+import math
+
+import numpy as np
+
 from Calls import Calls
 
 
@@ -17,8 +21,13 @@ class Elevator:
         self.state = 0  # 0 waiting -1 down 1 up
         self.up = []
         self.down = []
-        # self.calls_of_elev = Calls()
+        self.calls = []# self.calls_of_elev = Calls()
+        self.sim = []
 
+    def get_distance(self, src, dest):
+        dif = abs(src - dest)
+        dist = self.openTime + self.stopTime + self.closeTime + self.startTime + (dif / self.speed)
+        return dist
     # def add_to_route(self, elev):
     #     elev_calls = self.calls_of_elev.calls
     #     if len(self.calls_of_elev.calls) == 1:
