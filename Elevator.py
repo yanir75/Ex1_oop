@@ -5,7 +5,6 @@ from Call import Call
 
 
 class Elevator:
-
     def __init__(self, elev):
         self.pos = 0
         self.stopTime = elev['_stopTime']
@@ -54,9 +53,12 @@ class Elevator:
     def curr_pos(self):
         ind = 0
         li = self.timeBetweenCalls()
-        self.pos = 0
-        for i in li:
-            if len(self.sim)>0 and self.fixed_dist > 0:
+        g = len(li)
+        while self.ind < g:
+            i = li[ind]
+            self.ind+=1
+            f=len(self.sim)
+            if f>0 and self.fixed_dist > 0:
                 dif = abs(self.pos - self.sim[0])
                 dist = self.openTime + self.stopTime + self.closeTime + self.startTime + (dif / self.speed)
                 time = self.dister(dist,i,dif)
@@ -111,7 +113,7 @@ class Elevator:
                         count+=1
                     if self.state == -1:
                         count+=-1
-                ind+=1
+                    ind+=1
             self.num_of_floors = count
             return dist - time
         if time >= self.stopTime:
@@ -156,8 +158,9 @@ class Elevator:
             call.status = 3
 
     def timeBetweenCalls(self):
-        if len(self.calls) > 0:
+        l = len(self.calls)
+        if l > 0:
             li = [float(self.calls[0].time)]
-            for i in range(1, len(self.calls)):
+            for i in range(1, l):
                 li.append(float(self.calls[i].time) - float(self.calls[i - 1].time))
             return li

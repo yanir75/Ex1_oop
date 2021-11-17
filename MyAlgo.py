@@ -33,7 +33,8 @@ def calculate_route(call, elev):
     # 8 -> src in route down, dest in route down
     #
     # call is up
-    if call_type == 1 and (elev_state == 1 or elev_state == 0):
+    # and (elev_state == 1 or elev_state == 0)
+    if call_type == 1:
         elev_route = elev.up.copy()
         # CASE 1 ->
         if len(elev_route) == 0 and elev_pos < src_floor < dest_floor:
@@ -50,7 +51,8 @@ def calculate_route(call, elev):
                 # start to go over all the calls down
                 estimated_time += elev.get_distance(last_pos, floor)
                 last_pos = floor
-            estimated_time = elev.get_distance(last_pos, dest_floor) + max(estimated_time * (len(elev_route) / 2), estimated_time)
+            estimated_time += elev.get_distance(last_pos, dest_floor)
+            # + max(estimated_time * (len(elev_route) / 2), estimated_time)
             ALLOCATE_STATE = 2
 
         # CASE 3 ->
@@ -64,7 +66,7 @@ def calculate_route(call, elev):
                 # finish all the calls up
                 estimated_time += elev.get_distance(last_pos, floor)
                 last_pos = floor
-            estimated_time = estimated_time * (len(elev_route) / 2)
+            # estimated_time += estimated_time * (len(elev_route) / 2)
             # save the last pos of the elevator
             last_pos = elev_route[len(elev_route) - 1]
             elev_route = elev.down.copy()
@@ -76,7 +78,8 @@ def calculate_route(call, elev):
                 estimated_time += elev.get_distance(last_pos, floor)
             # save the last pos of the elevator
             last_pos = elev_route[len(elev_route) - 1]
-            estimated_time = elev.get_distance(last_pos, dest_floor) + max(estimated_time * (len(elev_route) / 4), estimated_time)
+            estimated_time += elev.get_distance(last_pos, dest_floor)
+            # + max(estimated_time * (len(elev_route) / 4), estimated_time)
             ALLOCATE_STATE = 3
         # CASE 4 ->
         else:
@@ -88,10 +91,11 @@ def calculate_route(call, elev):
             for floor in elev_route:
                 estimated_time += elev.get_distance(last_pos, floor)
                 last_pos = floor
-            estimated_time = max(estimated_time * (len(elev_route) / 2), estimated_time)
+            # estimated_time = max(estimated_time * (len(elev_route) / 2), estimated_time)
             ALLOCATE_STATE = 4
     # call is down
-    elif call_type == -1 and (elev_state == 0 or elev_state == -1):
+    # and (elev_state == 0 or elev_state == -1)
+    elif call_type == -1:
         elev_route = elev.down.copy()
         # CASE 5 ->
         if len(elev_route) == 0 and elev_pos > src_floor > dest_floor:
@@ -108,7 +112,8 @@ def calculate_route(call, elev):
                 # start to go over all the calls up
                 estimated_time += elev.get_distance(last_pos, floor)
                 last_pos = floor
-            estimated_time = elev.get_distance(last_pos, dest_floor) + max(estimated_time * (len(elev_route) / 4), estimated_time)
+            estimated_time += elev.get_distance(last_pos, dest_floor)
+            # + max(estimated_time * (len(elev_route) / 4), estimated_time)
             ALLOCATE_STATE = 6
         # CASE 7 ->
         elif len(elev_route) != 0 and elev_pos < src_floor > dest_floor:
@@ -119,7 +124,7 @@ def calculate_route(call, elev):
             for floor in elev_route:
                 # finish all the calls down
                 estimated_time += elev.get_distance(elev_pos, floor)
-            estimated_time = estimated_time * (len(elev_route) / 2)
+            # estimated_time = estimated_time * (len(elev_route) / 2)
             # save the last pos of the elevator
             last_pos = elev_route[len(elev_route) - 1]
             elev_route = elev.up.copy()
@@ -131,7 +136,8 @@ def calculate_route(call, elev):
                 estimated_time += elev.get_distance(last_pos, floor)
             # save the last pos of the elevator
             last_pos = elev_route[len(elev_route) - 1]
-            estimated_time = elev.get_distance(last_pos, dest_floor) + max(estimated_time * (len(elev_route) / 4), estimated_time)
+            estimated_time += elev.get_distance(last_pos, dest_floor)
+            # + max(estimated_time * (len(elev_route) / 4), estimated_time)
             ALLOCATE_STATE = 7
         # CASE 8 ->
         else:
@@ -141,7 +147,7 @@ def calculate_route(call, elev):
             elev_route.sort(reverse=True)
             for floor in elev_route:
                 estimated_time += elev.get_distance(elev_pos, floor)
-            estimated_time = max(estimated_time * (len(elev_route) / 4), estimated_time)
+            # estimated_time = max(estimated_time * (len(elev_route) / 4), estimated_time)
             ALLOCATE_STATE = 8
     return estimated_time, ALLOCATE_STATE
 

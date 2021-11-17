@@ -7,6 +7,7 @@ from Elevator import Elevator
 import pandas as pd
 
 from MyAlgo import MyAlgo
+from MyAlgo2 import Algo
 
 
 def building_from_json(file_name):
@@ -42,9 +43,10 @@ def write_to_csv(list_of_calls, ind):
 def read_calculate_write(building_file, calls_file, ind):
     curr_building = building_from_json(building_file)
     curr_calls = calls_from_CSV(calls_file)
-    algo = MyAlgo(curr_building, curr_calls)
-    for call in algo.calls.calls:
-        call.allocatedTo = algo.allocate_an_elevator(call)
+    algo = Algo(curr_building, curr_calls)
+    # for call in algo.calls.calls:
+        # call.allocatedTo = algo.allocate_an_elevator(call)
+    algo.allocate()
     write_to_csv(algo.calls, ind)
     # try:
     #     with open(building_file) as parser:

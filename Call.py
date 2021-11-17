@@ -14,7 +14,8 @@ class Call:
     #     size = len(building.elevators)
     #     num = random.randint(0, size)
     #     self.allocatedTo = 0
-
+    def allocate(self,ind):
+        self.allocatedTo = ind
     def get_call(self):
         return self
 
