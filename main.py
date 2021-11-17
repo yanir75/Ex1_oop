@@ -1,16 +1,22 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import Json
+import numpy as np
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    buildings = ["B1.json", "B2.json", "B3.json", "B4.json", "B5.json"]
+    calls_cases = ["calls_a.csv", "calls_b.csv", "calls_c.csv", "calls_d.csv"]
+    ind = 1
+    for i in buildings:
+        ch = chr(97)
+        ind1 = 1
+        for j in calls_cases:
+            st = f'{ind}{ch}'
+            Json.read_calculate_write(i, j, st)
+            ch = chr(97 + ind1)
+            ind1 += 1
+        ind += 1
+    # Json.read_calculate_write(buildings[4], calls_cases[3], "00")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
