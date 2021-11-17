@@ -54,13 +54,9 @@ Meaning we will go over the route of each elevator in the building and will choo
 
 
 ## How to use:
-```` 
 ```
 pip install -r requirements.txt
-```
-````
-```` 
+``` 
 ```
 python Ex1_main.py <json_file> <csv_file>
 ```
-````
