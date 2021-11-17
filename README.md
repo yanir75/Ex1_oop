@@ -55,6 +55,9 @@ Meaning we will go over the route of each elevator in the building and will choo
 
 ## How to use:
 ```
+git clone https://github.com/yanir75/Ex1_oop.git
+```
+```
 pip install -r requirements.txt
 ``` 
 ```
