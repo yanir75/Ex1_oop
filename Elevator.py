@@ -2,6 +2,8 @@
 
 from Calls import Calls
 from Call import Call
+import copy
+import Building
 
 
 class Elevator:
@@ -24,7 +26,9 @@ class Elevator:
         self.flag = 0
         self.num_of_floors = 0
         self.fixed_dist = 0
-
+        self.startFrom = 0
+        self.time = 0
+        self.ind = 0
     def get_distance(self, src, dest):
         dif = abs(src - dest)
         dist = self.openTime + self.stopTime + self.closeTime + self.startTime + (dif / self.speed)
@@ -45,13 +49,15 @@ class Elevator:
     def __str__(self):
         return f"elev ID: {self.id}  start time: {self.startTime}  stop time: {self.stopTime}  open time: {self.openTime} +  close time: {self.closeTime}  max floor: {self.maxFloor}  min floor: {self.minFloor}  speed: {self.speed}  pos: {self.pos} "
 
-    def check_done_calls(self):
-        for i in self.calls:
-            if i.status!=3:
+    def check_done_calls(self , li):
+        for i in li:
+            if i.status==3:
+                li.remove(i)
                 return False
         return True
     def curr_pos(self):
         ind = 0
+        self.time = 0
         li = self.timeBetweenCalls()
         g = len(li)
         while self.ind < g:
@@ -60,51 +66,80 @@ class Elevator:
             f=len(self.sim)
             if f>0 and self.fixed_dist > 0:
                 dif = abs(self.pos - self.sim[0])
-                dist = self.openTime + self.stopTime + self.closeTime + self.startTime + (dif / self.speed)
-                time = self.dister(dist,i,dif)
-                while time == -1:
-                    self.pos = self.sim[0]
-                    del self.sim[0]
-                    if len(self.sim) == 0:
-                        if self.check_done_calls():
-                            return self.pos
-                    self.dister(dist, i, dif)
-                if time == 0:
-                    self.pos = self.sim[0]
-                    del self.sim[0]
-                if self.flag > 1:
-                    self.pos = self.pos+self.num_of_floors
-                    self.flag = 1
-                    self.fixed_dist = time
-                if self.flag > 2:
-                    self.pos = self.sim[0]
-                    del self.sim[0]
-                    self.fixed_dist = time
-            elif len(self.sim)>0:
+                self.time = self.dister(self.fixed_dist, i, dif,self.startFrom)
+
+            if f>0:
                 dif = abs(self.pos - self.sim[0])
-                #if flag == 1
-    def dister(self,dist,time,dif):
-        if dist < time:
-            return -1
-        elif dist == time:
-            return 0
-        if time >= self.closeTime:
+                dist = self.openTime + self.stopTime + self.closeTime + self.startTime + (dif / self.speed)
+                self.time = self.dister(dist,i,dif)
+                while self.time == -2:
+                    self.pos = self.sim[0]
+                    del self.sim[0]
+                    self.fixed_dist = 0
+                    if f == 0 and self.check_done_calls(self.calls):
+                            self.fixed_dist = 0
+                            self.state = 0
+                            return None
+                    else:
+                        if f > 0:
+                            self.time = i - dist
+                        dif = abs(self.pos - self.sim[0])
+                        dist = self.openTime + self.stopTime + self.closeTime + self.startTime + (dif / self.speed)
+                        self.time = self.dister(dist, self.time, dif)
+                    if f == 0:
+                        self.time = -3
+                        self.flag=0
+                if self.time == -1:
+                    self.pos = self.sim[0]
+                    del self.sim[0]
+                if self.flag == 1:
+                    self.flag = 1
+                    self.fixed_dist = self.time
+                if self.flag > 2:
+                    self.fixed_dist = self.time
+            if self.sim ==0:
+                self.state = 0
+            for i in self.calls:
+                lc = len(self.calls)
+                if self.state == 1 and ind < lc:
+                    self.add_call_to_route_1(self.self.callsls[ind])
+                    ind+=1
+                if self.state == -1 and ind < lc:
+                    self.add_call_to_route_2(self.calls[ind])
+                    ind+=1
+                if self.state == 0 and ind < lc:
+                    self.add_call_to_route_0(self.calls[ind])
+                    ind+=1
+
+    def dister(self,dist,time,dif,start=-1):
+        if dist < time and start <0:
+                self.flag = -1
+                return -2
+        elif dist == time and start <0:
+                self.flag = -1
+                return -1
+        if time >= self.closeTime and start < 1:
             dist = dist - self.closeTime
             time = time - self.closeTime
+            self.startFrom =1
         else:
-            self.flag == 0
+            self.flag = 0
+            self.startFrom = 0
             return dist - time
-        if time >= self.startTime:
+        if time >= self.startTime and start < 2:
             dist = dist - self.startTime
             time = time - self.startTime
+            self.startFrom =2
         else:
-            self.flag == 1
+            self.flag = 1
+            self.startFrom = 1
             return dist - time
-        if time >= dif/self.speed:
+        if time >= dif/self.speed and start < 3:
             dist = dist - dif/self.speed
             time = time - dif/self.speed
+            self.startFrom = 3
         else:
-            self.flag == 2
+            self.flag = 2
             ind = 0.0
             count = 0
             while ind < dif:
@@ -115,11 +150,24 @@ class Elevator:
                         count+=-1
                     ind+=1
             self.num_of_floors = count
+            self.startFrom =2
+            self.pos = self.pos + count
             return dist - time
-        if time >= self.stopTime:
-            self.flag == 3
+        self.pos = self.sim[0]
+        del self.sim[0]
+        if time >= self.stopTime and start < 4:
+            self.flag = 4
             dist = dist - self.stopTime
             time = time - self.stopTime
+            self.startFrom =4
+        else:
+            self.startFrom = 3
+            return dist-time
+        if time >= self.closeTime:
+            self.startFrom =0
+            self.flag = 0
+            self.fixed_dist = 0
+            return -2
         self.flag == 4
         return dist - time
 
@@ -164,3 +212,4 @@ class Elevator:
             for i in range(1, l):
                 li.append(float(self.calls[i].time) - float(self.calls[i - 1].time))
             return li
+        return []
