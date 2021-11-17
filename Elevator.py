@@ -54,6 +54,7 @@ class Elevator:
     def curr_pos(self):
         ind = 0
         li = self.timeBetweenCalls()
+        self.pos = 0
         for i in li:
             if len(self.sim)>0 and self.fixed_dist > 0:
                 dif = abs(self.pos - self.sim[0])
@@ -110,7 +111,7 @@ class Elevator:
                         count+=1
                     if self.state == -1:
                         count+=-1
-                    ind+=1
+                ind+=1
             self.num_of_floors = count
             return dist - time
         if time >= self.stopTime:

@@ -1,11 +1,13 @@
+from Elevator import Elevator
 
 
 def calculate_route(call, elev):
     # 1 for UP -1 for DOWN
-    call_type = call.status
+    call_type = -1 if call.src > call.dest else 1
     src_floor = call.src
     dest_floor = call.dest
     starting_time = call.time
+    elev.curr_pos()
     elev_pos = elev.pos
     elev_state = elev.state
     estimated_time = 0
@@ -157,17 +159,17 @@ class MyAlgo:
         src_floor = call.src
         dest_floor = call.dest
         starting_time = call.time
-        MIN_estimated_time = 2 ^ 20
+        MIN_estimated_time = 2**20
         ind_of_elev = -1
         allocate_state = 0
         for elev in self.elevators:
             curr_estimated_time, curr_allocate_state = calculate_route(call, elev)
             if curr_estimated_time < MIN_estimated_time:
                 MIN_estimated_time = curr_estimated_time
-                ind_of_elev = self.elevators.id
+                ind_of_elev = elev.id
                 allocate_state = curr_allocate_state
         # add to the list of calls
-        self.elevators[ind_of_elev].calls.appand(call)
+        self.elevators[ind_of_elev].calls.append(call)
         # CASE 1 or CASE 4 ->
         if allocate_state == 1 or allocate_state == 4:
             route1 = self.route_up[ind_of_elev]

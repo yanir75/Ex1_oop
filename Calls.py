@@ -20,17 +20,8 @@ class Calls:
             li.append(float(self.calls[i].time) - float(self.calls[i - 1].time))
         return li
 
-    def write_to_csv(self):
-        # https://www.pythontutorial.net/python-basics/python-write-csv-file/
-        f = open("output.csv", "w", newline='')
-        writer = csv.writer(f)
-        for i in self.calls:
-            li = [i.kind, i.time, i.src, i.dest, i.status, i.allocatedTo]
-            writer.writerow(li)
-        f.close()
-
-    def alloc(self, b):
-        size = len(b.elevators) - 1
-        for i in self.calls:
-            num = random.randint(0, size)
-            i.allocatedTo = 0
+    # def alloc(self, b):
+    #     size = len(b.elevators) - 1
+    #     for i in self.calls:
+    #         num = random.randint(0, size)
+    #         i.allocatedTo = 0
