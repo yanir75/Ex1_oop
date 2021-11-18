@@ -60,6 +60,9 @@ git clone https://github.com/yanir75/Ex1_oop.git
 ```
 pip install -r requirements.txt
 ``` 
+## To insert your own building and files
 ```
-python Ex1_main.py <json_file> <csv_file>
+python Ex1_main.py <building_json_file_name> <calls_csv_file_name> <output_file_name>
 ```
+## To use existing files
+python Ex1_main.py <output_file_name>
