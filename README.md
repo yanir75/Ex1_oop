@@ -65,4 +65,6 @@ pip install -r requirements.txt
 python Ex1_main.py <building_json_file_name> <calls_csv_file_name> <output_file_name>
 ```
 ## To use existing files
+```
 python Ex1_main.py <output_file_name>
+```
