@@ -14,17 +14,17 @@ class Algo:
         self.aloc()
 
     def avg(self):
-        for i in self.building.elevators: i.waiting = i.waiting / len(self.calls.calls)
+        for i in self.building.elevators: i.waiting = self.calls.length/(self.calls.length*i.waiting)
 
     def aloc(self):
-        for i in self.building.elevators:
-            if len(self.calls.calls) > self.ind:
+        self.avg()
+        for elev in self.building.elevators:
+            for ind in range(self.calls.length):
                 self.firstInd()
-            else:
-                break
-            for k in np.arange(self.ind, len(self.calls.calls), i.waiting):
-                if k < len(self.calls.calls) and self.calls.calls[int(k)]==-1:
-                    self.calls.calls[int(k)].allocate(i.id)
+                if ind*elev.waiting < self.calls.length:
+                    ind1 = ind * elev.waiting
+                    self.calls.calls[int(ind1)].allocate(elev.id)
+
 
     def firstInd(self):
         while self.ind<len(self.calls.calls) and self.calls.calls[self.ind].allocatedTo != -1: self.ind += 1
