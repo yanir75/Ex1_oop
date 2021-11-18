@@ -3,7 +3,6 @@
 **Yanir Cohen**  
 **Netanel Levine** 
 
-
 ## Sources:
 
   - https://www.youtube.com/watch?v=siqiJAJWUVg
@@ -52,3 +51,15 @@ Meaning we will go over the route of each elevator in the building and will choo
    <p align="center">
     <img width="800" height="900" src="https://user-images.githubusercontent.com/74298433/141529107-3a273664-8d12-4cb6-88b6-4b2427c20cf9.png">
    </p>
+
+
+## How to use:
+```
+git clone https://github.com/yanir75/Ex1_oop.git
+```
+```
+pip install -r requirements.txt
+``` 
+```
+python Ex1_main.py <json_file> <csv_file>
+```
