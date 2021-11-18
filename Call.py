@@ -9,6 +9,7 @@ class Call:
         self.dest = int(call[3])
         self.status = int(call[4])
         self.allocatedTo = int(call[5])
+        self.call_ind = -1
 
     def allocate(self, elev):
         self.allocatedTo = elev
