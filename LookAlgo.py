@@ -23,7 +23,7 @@ class Algo:
             else:
                 break
             for k in np.arange(self.ind, len(self.calls.calls), i.waiting):
-                if k < len(self.calls.calls):
+                if k < len(self.calls.calls) and self.calls.calls[int(k)]==-1:
                     self.calls.calls[int(k)].allocate(i.id)
 
     def firstInd(self):
