@@ -96,7 +96,7 @@ Run tester
 ```
 python Ex1_tester.py
 ```
-*Note:* 
+*Note:*     
 *If the tester succeeded it will delete the files it created automatically.*  
 *In case of failure the files will be kept in order to observe the errors.*  
 
