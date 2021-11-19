@@ -62,6 +62,10 @@ To use existing building and call files use this command
 ```
 python Ex1_main.py <output_file_name>
 ```
+Use default paremters in case of no parameters
+```
+python Ex1_main.py
+```
 ------
 ## Sources:
 
