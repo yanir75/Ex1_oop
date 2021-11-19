@@ -32,6 +32,7 @@ Since this is an offline we added a tweak which calculates which zone should hav
 |**Calls_b**|		     |        | 412.6  | 170.1  |	71.5   |
 |**Calls_c**|		     |        | 420.8  | 157.2  |	64.7   |
 |**Calls_d**|		     |        | 408.3  | 168.3  |	66.8   |
+   *Values were rounded to 3 digits after the decimal point.*  
 ---
 ## Smart Elevator UML
 
