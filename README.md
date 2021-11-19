@@ -5,7 +5,7 @@
    
 ---
 ## Assignment 1 - Object Oriented Programming :elevator: :office:  
-/requires/:service/:user/:repo  
+![](https://img.shields.io/aur/last-modified/google-chrome)
 **Yanir Cohen**  
 **Netanel Levine** 
 --- 
