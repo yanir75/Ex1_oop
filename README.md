@@ -27,7 +27,7 @@ Since this is an offline we added a tweak which calculates which zone should hav
 
 ## Here are our results for the avarage waiting time:
    - **The B1...B5 represents each of the buildings we tested.** 
-   - **The Calls_a...Calls_d  represents each of the calls scenrio we tried.** 
+   - **The Calls_a...Calls_d  represents each of the calls scenario we tried.** 
    - The buildings B1, and B2 can be tested only on calls_a because this is the only scenario with calls that are in the floor range of these buildings. (-2,10)  
 
 |           | **B1** | **B2** | **B3** | **B4** | **B5** |
