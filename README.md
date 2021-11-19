@@ -18,11 +18,11 @@ As a result we decided that our offline algorithm will be deviding the calls int
 Since this is an offline we added a tweak which calculates which zone should have the fastest elevator.
 
 ---
-## UML
+## Smart Elevator UM
 
    
    <p align="center">
-    <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/Smart%20Elevator%20UML.png" "Smart Elevator UML">
+    <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/Smart%20Elevator%20UML.png">
    </p>
 
 
