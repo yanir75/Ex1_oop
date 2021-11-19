@@ -10,7 +10,7 @@
 --- 
 The project is about utilizing a building which is composed from a number of elevators and their parameters in the most efficient way for less waiting time of each person.
 In the project we will receive 2 files, a building file in json format and calls in csv format, calls are composed from few components the main ones are source floor and destination floor. In the algorithm we will try to determine what is the most efficient waiting time solution for the given problem.
-[click for sources](#Sources)
+[click for building,calls components](#Smart Elevator UML)
 
 ## Offline Algorithm:
 
@@ -39,7 +39,8 @@ Since this is an offline we added a tweak which calculates which zone should hav
     <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/Images/Smart%20Elevator%20UML.png">
    </p>
 
-
+## GUI
+![GUI Github Link](https://github.com/yanir75/ElevUi)
 
 ## How to use:
 Clone the repository and cd(enter) the folder.
