@@ -93,11 +93,13 @@ java -jar Ex1_checker_V1.2_obf.jar <IDs, building, calls, log_out>
 * `log_out` : the output file name   
 
 Run tester  
-Note: If the tester succeeded it will delete the files it created automatically.  
-      In case of failure the files will be kept in order to observe the errors.
 ```
 python Ex1_tester.py
 ```
+*Note:* 
+*If the tester succeeded it will delete the files it created automatically.*  
+*In case of failure the files will be kept in order to observe the errors.*  
+
 ------
 ## Sources:
 
