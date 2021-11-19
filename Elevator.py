@@ -17,9 +17,6 @@ class Elevator:
         self.minFloor = elev['_minFloor']
         self.speed = elev['_speed']
         self.id = elev['_id']
-        self.state = 0  # 0 waiting -1 down 1 up
-        self.up = []
-        self.perc = 0
 
     def get_distance(self, src, dest):
         dif = abs(src - dest)
