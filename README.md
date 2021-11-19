@@ -13,8 +13,12 @@ In the project we will receive 2 files, a building file in json format and calls
 ## Sources:
 
   - <a href="https://www.youtube.com/watch?v=siqiJAJWUVg">Elevator System Design OOP - Youtube</a>
+  - <a href="http://vedantmisra.com/elevator-algorithms/">Elevator Algorithms - Vedant Misra</a>
   - <a href="https://github.com/00111000/Elevator-Scheduling-Simulator">Elevator Algorithms - Vedant Misra</a>
   - <a href="https://www.researchgate.net/publication/31595225_Estimated_Time_of_Arrival_ETA_Based_Elevator_Group_Control_Algorithm_with_More_Accurate_Estimation">(ETA) Based Elevator Group Control Algorithm with More Accurate Estimation</a>
+  - <a href="https://www.geeksforgeeks.org/scan-elevator-disk-scheduling-algorithms/">SCAN Elevator - GeegsForGeeks</a>
+  - <a href="https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-science-of-elevators/">The
+   Hidden Science of Elevators</a>
 
 
 
