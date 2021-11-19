@@ -78,22 +78,22 @@ Use default paremters in case of no parameters
 ```
 python Ex1_main.py
 ```
-* `building_json_file_name`: reletive/full path and the file name, must be a json format.
-* `calls_csv_file_name`: reletive/full path and the file name, must be a csv format.
-* `output_file_name`: the output file name, will be as csv format.  
+* `building_json_file_name` : reletive/full path and the file name, must be a json format.
+* `calls_csv_file_name` : reletive/full path and the file name, must be a csv format.
+* `output_file_name` : the output file name, will be as csv format.  
 ------
 ## Tests and testing jar
 In order to test the results run the following
 ```
 java -jar Ex1_checker_V1.2_obf.jar <IDs, building, calls, log_out>
 ```  
-* `IDs`: at least 1 ID seperated by "," maximum 3.  
-* `building`: the json file representing the building  
-* `calls`: the csv file representing the calls  
-* `log_out`: the output file name   
+* `IDs` : at least 1 ID seperated by "," maximum 3.  
+* `building` : the json file representing the building  
+* `calls` : the csv file representing the calls  
+* `log_out` : the output file name   
 
 Run tester  
-Note: If the tester succeeded it will delete the files it created automatically.
+Note: If the tester succeeded it will delete the files it created automatically.  
       In case of failure the files will be kept in order to observe the errors.
 ```
 python Ex1_tester.py
