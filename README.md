@@ -4,8 +4,8 @@
    </p>  
    
 ---
+![](https://img.shields.io/aur/last-modified/google-chrome)   
 ## Assignment 1 - Object Oriented Programming :elevator: :office:  
-![](https://img.shields.io/aur/last-modified/google-chrome)  
 **Yanir Cohen**  
 **Netanel Levine** 
 --- 
