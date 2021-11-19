@@ -18,14 +18,6 @@ As a result we decided that our offline algorithm will be deviding the calls int
 Since this is an offline we added a tweak which calculates which zone should have the fastest elevator.
 
 ---
-## Smart Elevator UM
-
-   
-   <p align="center">
-    <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/Smart%20Elevator%20UML.png">
-   </p>
-
-
 
 ### Here are our results for the avarage waiting time:
    - **The B1...B5 represents each of the buildings we tested.** 
@@ -37,6 +29,15 @@ Since this is an offline we added a tweak which calculates which zone should hav
 |**Calls_b**|		     |        | 412.6  | 170.1  |	71.5   |
 |**Calls_c**|		     |        | 420.8  | 157.2  |	64.7   |
 |**Calls_d**|		     |        | 408.3  | 168.3  |	66.8   |
+
+---
+## Smart Elevator UML
+
+   
+   <p align="center">
+    <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/Smart%20Elevator%20UML.png">
+   </p>
+
 
 
 ## How to use:
