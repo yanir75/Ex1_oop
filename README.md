@@ -32,6 +32,7 @@ Since this is an offline we added a tweak which calculates which zone should hav
 |**Calls_c**|		     |        | 420.8  | 157.2  |	64.7   |
 |**Calls_d**|		     |        | 408.3  | 168.3  |	66.8   |
 
+The buildings B1, and B2 can only ran calls_a because this is the only scenario with calls that are in the floor range of these buildings. (-2,10)  
 ---
 ## Smart Elevator UML
 
