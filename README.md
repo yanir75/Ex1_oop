@@ -5,7 +5,7 @@
    
 ---
 ![](https://img.shields.io/aur/last-modified/google-chrome)   
-## Assignment 1 - Object Oriented Programming :office: 🛗 
+## Assignment 1 - Object Oriented Programming :office: 🛗
 **Yanir Cohen**  
 **Netanel Levine** 
 --- 
