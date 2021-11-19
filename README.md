@@ -26,6 +26,19 @@ Since this is an offline we added a tweak which calculates which zone should hav
    </p>
 
 
+
+### Here are our results for the avarage waiting time:
+   - **The B1...B5 represents each of the buildings we tested.** 
+   - **The Calls_a...Calls_d  represents each of the calls scenrio we tried.** 
+
+|           | **B1** | **B2** | **B3** | **B4** | **B5** |
+|-----------|--------|--------|--------|--------|--------|
+|**Calls_a**|	112.9	 | 42.2   |	44.2   | 36.9   |	26.7   |
+|**Calls_b**|		     |        | 412.6  | 170.1  |	71.5   |
+|**Calls_c**|		     |        | 420.8  | 157.2  |	64.7   |
+|**Calls_d**|		     |        | 408.3  | 168.3  |	66.8   |
+
+
 ## How to use:
 ```
 git clone https://github.com/yanir75/Ex1_oop.git & cd Ex1_oop
