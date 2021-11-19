@@ -36,7 +36,7 @@ Since this is an offline we added a tweak which calculates which zone should hav
 
    
    <p align="center">
-    <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/Smart%20Elevator%20UML.png">
+    <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/Images/Smart%20Elevator%20UML.png">
    </p>
 
 
