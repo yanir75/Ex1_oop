@@ -48,7 +48,8 @@ Since this is an offline we added a tweak which calculates which zone should hav
 
 ## GUI
 [GUI Github Link](https://github.com/yanir75/ElevUi)  
-[GUI Github Readme](https://github.com/yanir75/ElevUi/blob/master/README.md)
+[GUI Github Readme]  
+(https://github.com/yanir75/ElevUi/blob/master/README.md)
 Link for a youtube video which simulates two elevator  
 [2 Elevators simultaor](https://youtu.be/HnYb2Hm9wEg)  
 Link for a youtube video which simulates one elevator   
@@ -82,9 +83,8 @@ python Ex1_main.py
 ## Tests and testing jar
 In order to test the results run the following
 ```
-java -jar Ex1_checker_V1.2_obf.jar <IDs, json, calls, log_out>
-```
-IDs:123456789,987654321,22222222  
+java -jar Ex1_checker_V1.2_obf.jar <IDs, building, calls, log_out>
+```  
 
 Run tester
 ```
