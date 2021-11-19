@@ -8,7 +8,7 @@ def main():
         file_name = sys.argv[3]
         Reader.read_calculate_write(building_file, csv_file, file_name)
     except:
-        output = sys.argv[2]
+        output = sys.argv[1]
         buildings = ["./building_files/B1.json", "./building_files/B2.json", "./building_files/B3.json", "./building_files/B4.json", "./building_files/B5.json"]
         calls_cases = ["./call_files/calls_a.csv", "./call_files/calls_b.csv", "./call_files/calls_c.csv", "./call_files/calls_d.csv"]
         Reader.read_calculate_write(buildings[1], calls_cases[0], f'{output}_B1_a')
