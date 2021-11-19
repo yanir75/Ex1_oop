@@ -44,7 +44,7 @@ class Calls{
 }
 
 
-class Reader{
+class Reader_writer{
 +building_from_json(file_name)
 +calls_from_CSV(file_name)
 +write_to_csv(list_of_calls, file_name)
@@ -80,8 +80,8 @@ Calls --> Call
 Calls ---> MyAlgo
 MyAlgo --> Ex1_main
 MyAlgo --> Ex1_tester
-Reader --> Calls
-Reader --> Building
-Reader <--> Ex1_tester
-Reader <--> Ex1_main
+Reader_writer --> Calls
+Reader_writer --> Building
+Reader_writer <--> Ex1_tester
+Reader_writer <--> Ex1_main
 @endum
