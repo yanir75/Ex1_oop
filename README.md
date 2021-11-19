@@ -13,6 +13,7 @@ The project is about utilizing a building which is composed from a number of ele
 In the project we will receive 2 files, a building file in json format and calls in csv format, calls are composed from few components the main ones are source floor and destination floor. In the algorithm we will try to determine what is the most efficient waiting time solution for the given problem.  
   
 Reference to the UML: [ UML](#Smart-Elevator-UML)
+Reference to how to use: [ click here](# How to use)
   
   
 ---
