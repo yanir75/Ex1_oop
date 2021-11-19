@@ -1,6 +1,6 @@
 
    <p align="center">
-    <img width="800" height="900" src="https://github.com/yanir75/Ex1_oop/blob/main/header.png">
+    <img width="600" height="100" src="https://github.com/yanir75/Ex1_oop/blob/main/header.png">
    </p>
 # Assignment 1 - Object Oriented Programming :elevator:
 The project is about utilizing a building which is composed from a number of elevators and their parameters in the most efficient way for less waiting time of each person.
