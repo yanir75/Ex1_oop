@@ -9,8 +9,8 @@
 **Netanel Levine** 
 --- 
 The project is about utilizing a building which is composed from a number of elevators and their parameters in the most efficient way for less waiting time of each person.
-In the project we will receive 2 files, a building file in json format and calls in csv format, calls are composed from few components the main ones are source floor and destination floor. In the algorithm we will try to determine what is the most efficient waiting time solution for the given problem. 
-[click for sources](##Sources:)
+In the project we will receive 2 files, a building file in json format and calls in csv format, calls are composed from few components the main ones are source floor and destination floor. In the algorithm we will try to determine what is the most efficient waiting time solution for the given problem.
+[click for sources](#Sources)
 
 ## Offline Algorithm:
 
