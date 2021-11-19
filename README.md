@@ -12,7 +12,7 @@
 The project is about utilizing a building which is composed from a number of elevators and their parameters in the most efficient way for less waiting time of each person.  
 In the project we will receive 2 files, a building file in json format and calls in csv format, calls are composed from few components the main ones are source floor and destination floor. In the algorithm we will try to determine what is the most efficient waiting time solution for the given problem.  
 Classes structure [Structure UML](#Smart-Elevator-UML)
-
+---
 ## Offline Algorithm:
 
 According to a research shown in the sources , it can be seen that zoning has proved to have the best average wait time for each people.  
