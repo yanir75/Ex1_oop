@@ -19,7 +19,7 @@ Since this is an offline we added a tweak which calculates which zone should hav
 
 ---
 
-### Here are our results for the avarage waiting time:
+## Here are our results for the avarage waiting time:
    - **The B1...B5 represents each of the buildings we tested.** 
    - **The Calls_a...Calls_d  represents each of the calls scenrio we tried.** 
 
