@@ -49,7 +49,7 @@ Since this is an offline we added a tweak which calculates which zone should hav
 ## GUI
 [GUI Github Link](https://github.com/yanir75/ElevUi)  
 [GUI Github Readme]  
-(https://github.com/yanir75/ElevUi/blob/master/README.md)
+(https://github.com/yanir75/ElevUi/blob/master/README.md)  
 Link for a youtube video which simulates two elevator  
 [2 Elevators simultaor](https://youtu.be/HnYb2Hm9wEg)  
 Link for a youtube video which simulates one elevator   
