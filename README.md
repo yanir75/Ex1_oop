@@ -74,6 +74,18 @@ Use default paremters in case of no parameters
 python Ex1_main.py
 ```
 ------
+## Tests and testing jar
+In order to test the results run the following
+```
+java -jar Ex1_checker_V1.2_obf.jar <IDs, json, calls, log_out>
+```
+IDs:123456789,987654321,22222222  
+
+Run tester
+```
+python Ex1_tester.py
+```
+
 ## Sources:
 
   - <a href="https://www.youtube.com/watch?v=siqiJAJWUVg">Elevator System Design OOP - Youtube</a>
