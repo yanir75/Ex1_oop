@@ -51,11 +51,11 @@ Install required packages.
 ```
 pip install -r requirements.txt
 ``` 
-To insert your own building and files you can use this option
+To insert your own building and call files you can use this option
 ```
 python Ex1_main.py <building_json_file_name> <calls_csv_file_name> <output_file_name>
 ```
-To use existing building and csv files use this command
+To use existing building and call files use this command
 ```
 python Ex1_main.py <output_file_name>
 ```
