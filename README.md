@@ -4,7 +4,7 @@
    </p>  
    
 ---
-## Assignment 1 - Object Oriented Programming :elevator: :office: :department_store:
+## Assignment 1 - Object Oriented Programming :elevator: :office: 
 **Yanir Cohen**  
 **Netanel Levine** 
 --- 
