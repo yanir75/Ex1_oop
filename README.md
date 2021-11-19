@@ -40,7 +40,7 @@ Since this is an offline we added a tweak which calculates which zone should hav
    </p>
 
 ## GUI
-![GUI Github Link](https://github.com/yanir75/ElevUi)
+[![GUI Github Link](https://github.com/yanir75/ElevUi)]
 
 ## How to use:
 Clone the repository and cd(enter) the folder.
