@@ -61,7 +61,7 @@ Link for a youtube video which simulates one elevator
 ## How to use:
 Clone the repository and cd(enter) the folder.
 ```
-git clone https://github.com/yanir75/Ex1_oop.git & cd Ex1_oop
+git clone https://github.com/yanir75/Python-Elevator-Algorithm.git & cd Python-Elevator-Algorithm
 ```
 Install required packages.
 ```
